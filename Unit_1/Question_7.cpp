@@ -1,36 +1,45 @@
-//Create a class Employee with a static data member count. Increase count whenever employee data is entered through a member function. 
-//Create four employee objects and display the final shared count.
-
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-class Employee 
+class Employee
 {
-    public:
+private:
+    int id;
     static int count;
-    string eName;
 
-    void setName(string name)
+public:
+    void getData()
     {
-        eName = name;
+        cout << "Enter Employee ID: ";
+        cin >> id;
         count++;
     }
 
-    static int getCount()
+    static void displayCount()
     {
-        return count;
+        cout << "Total number of employees = " << count << endl;
     }
 };
-int Employee::count=0;
+
+int Employee::count = 0;
+
 int main()
 {
-    Employee Vedant;
-    Vedant.setName("Vedant Choudhari");
-    
+    Employee e1, e2, e3, e4;
 
-    Employee Rakesh;
-    Rakesh.setName("Rakesh Kumar");
+    cout << "Enter details of Employee 1:" << endl;
+    e1.getData();
 
-    cout<<Employee::getCount()<<endl;
-    
+    cout << "Enter details of Employee 2:" << endl;
+    e2.getData();
+
+    cout << "Enter details of Employee 3:" << endl;
+    e3.getData();
+
+    cout << "Enter details of Employee 4:" << endl;
+    e4.getData();
+
+    Employee::displayCount();
+
+    return 0;
 }
