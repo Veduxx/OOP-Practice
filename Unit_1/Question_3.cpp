@@ -7,7 +7,7 @@ using namespace std;
 class BankAccount
 {
     public:
-    int accountNumber;
+    string accountNumber;
     string holderName;
     float balance;
     float withdraw;
